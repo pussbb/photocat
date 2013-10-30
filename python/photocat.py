@@ -108,7 +108,7 @@ if __name__ == '__main__':
         if not os.access(DESTINATION_DIR, os.W_OK):
             raise Exception('Folder %s not writable' % DESTINATION_DIR)
 
-    if ARGS['gui']:
+    if ARGS['gui'] or sys.platform.startswith('win'):
         import ui.app
         ui.app.main()
     else:
